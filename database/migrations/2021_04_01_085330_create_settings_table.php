@@ -16,6 +16,7 @@ class CreateSettingsTable extends Migration
         Schema::create('settings', function (Blueprint $table) {
             $table->id();
             $table->string('website_title')->default("Color Ceramics LTD | Blog");
+            $table->string('website_logo')->nullable();
             $table->string('address')->nullable();
             $table->string('phone_number')->nullable();
             $table->string('email_address')->nullable();

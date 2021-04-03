@@ -33,7 +33,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-
+        return view('admin.category.create');
     }
 
     /**
@@ -55,7 +55,7 @@ class CategoryController extends Controller
             $category->category_name = $request->category_name;
             $category->category_slug = $this->make_slug($request->category_name);
             $category->save();
-            return back()->with('message','Successfully Category Added!!');
+            return redirect()->route('category.list')->with('message','Successfully Category Added!!');
 
         } catch (\Throwable $th) {
             return back()->with('error','Something went wrong...!!');

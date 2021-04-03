@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use App\Models\Slider;
 class SliderController extends Controller
 {
     /**
@@ -14,7 +14,8 @@ class SliderController extends Controller
      */
     public function index()
     {
-        //
+        $allSlider = Slider::orderByDesc('id')->get();
+        return view('admin.slider.list',compact('allSlider'));
     }
 
     /**
@@ -24,7 +25,7 @@ class SliderController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.slider.create');
     }
 
     /**
@@ -35,7 +36,24 @@ class SliderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Validation
+        $request->validate([
+            'slider_image' => 'required|image',
+        ]);
+        try {
+            $slider = new Slider();
+                if ($request->hasFile('slider_image')) {
+                    $image = $request->file('slider_image');
+                    $name = time().'.'.$image->getClientOriginalExtension();
+                    $destinationPath = public_path('/uploads/slider/');
+                    $image->move($destinationPath, $name);
+                    $slider->slider_image = $name;
+                }
+            $slider->save();
+            return redirect()->route('slider.list')->with('message','Slider Added successfully');
+        } catch (\Throwable $th) {
+            return back()->with('error','Something went wrong...!!');
+        }
     }
 
     /**
@@ -44,9 +62,8 @@ class SliderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request)
     {
-        //
     }
 
     /**
@@ -55,9 +72,10 @@ class SliderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request)
     {
-        //
+        $slider = Slider::findOrFail($request->slider_id);
+        return view('admin.slider.edit',compact('slider'));
     }
 
     /**
@@ -67,9 +85,29 @@ class SliderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        // Validation
+        $request->validate([
+            'slider_image' => 'required|image',
+        ]);
+        try {
+            $slider = Slider::findOrFail($request->slider_id);
+                if ($request->hasFile('slider_image')) {
+                    if(isset($slider->slider_image)){
+                        unlink('uploads/slider/'.$slider->slider_image);
+                    };
+                    $image = $request->file('slider_image');
+                    $name = time().'.'.$image->getClientOriginalExtension();
+                    $destinationPath = public_path('/uploads/slider/');
+                    $image->move($destinationPath, $name);
+                    $slider->slider_image = $name;
+                }
+            $slider->update();
+            return redirect()->route('slider.list')->with('message','Slider Added successfully');
+        } catch (\Throwable $th) {
+            return back()->with('error','Something went wrong...!!');
+        }
     }
 
     /**
@@ -78,8 +116,13 @@ class SliderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        //
+        $slider = Slider::findOrFail($request->slider_id);
+        if(isset($slider->slider_image)){
+            unlink('uploads/slider/'.$slider->slider_image);
+        }
+        $slider->delete();
+        return back()->with('message','Successfully Slider Deleted!!');
     }
 }

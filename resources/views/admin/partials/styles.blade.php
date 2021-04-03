@@ -1,5 +1,3 @@
-  <!-- CSS Files -->
-  <link href="{{asset('backend/')}}/assets/css/material-dashboard.css?v=2.1.2" rel="stylesheet" />
-  <!-- CSS Just for demo purpose, don't include it in your project -->
-  <link href="{{asset('backend/')}}/assets/demo/demo.css" rel="stylesheet" />
-  @yield('custom_styles')
+<link rel="stylesheet" type="text/css" href="{{asset('backend/css/main.css')}}">
+<!-- Font-icon css-->
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">

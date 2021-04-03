@@ -1,39 +1,34 @@
-<div class="sidebar" data-color="purple" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
-      <div class="logo"><a href="http://www.creative-tim.com" class="simple-text logo-normal">
-          Color Ceramics
-        </a></div>
-      <div class="sidebar-wrapper">
-        <ul class="nav">
-          <li class="nav-item active  ">
-            <a class="nav-link" href="/home">
-              <i class="material-icons">dashboard</i>
-              <p>Dashboard</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="{{route('slider.list')}}">
-              <i class="material-icons">person</i>
-              <p>Slider</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="{{route('category.list')}}">
-              <i class="material-icons">content_paste</i>
-              <p>Category</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="/">
-              <i class="material-icons">library_books</i>
-              <p>Post</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="/">
-              <i class="material-icons">bubble_chart</i>
-              <p>Settings</p>
-            </a>
-          </li>
-        </ul>
-      </div>
+<aside class="app-sidebar">
+    <div class="app-sidebar__user">
+        <div>
+            <p class="app-sidebar__user-name">{{Auth::user()->name ? Auth::user()->name : "Color Ceramics"}}</p>
+        </div>
     </div>
+    <ul class="app-menu">
+        <li><a class="app-menu__item active" href="/home">
+                <i class="app-menu__icon fa fa-dashboard"></i>
+                <span class="app-menu__label">Dashboard</span>
+            </a>
+        </li>
+        <li><a class="app-menu__item" href="{{route('slider.list')}}">
+                <i class="app-menu__icon fa fa-pie-chart"></i>
+                <span class="app-menu__label">Slider</span>
+            </a>
+        </li>
+        <li><a class="app-menu__item" href="{{route('category.list')}}">
+                <i class="app-menu__icon fa fa-pie-chart"></i>
+                <span class="app-menu__label">Category</span>
+            </a>
+        </li>
+        <li><a class="app-menu__item" href="{{route('post.list')}}">
+                <i class="app-menu__icon fa fa-pie-chart"></i>
+                <span class="app-menu__label">Post</span>
+            </a>
+        </li>
+        <li><a class="app-menu__item" href="{{route('setting.list')}}">
+                <i class="app-menu__icon fa fa-pie-chart"></i>
+                <span class="app-menu__label">Settings</span>
+            </a>
+        </li>
+    </ul>
+</aside>

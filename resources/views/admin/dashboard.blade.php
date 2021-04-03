@@ -1,72 +1,46 @@
 @extends('admin.master')
 @section('content')
-<div class="row">
-    <div class="col-lg-3 col-md-6 col-sm-6">
-        <div class="card card-stats">
-            <div class="card-header card-header-warning card-header-icon">
-                <div class="card-icon">
-                <i class="material-icons">content_copy</i>
+    <div class="app-title">
+        <div>
+            <h1><i class="fa fa-dashboard"></i> Dashboard</h1>
+        </div>
+        <ul class="app-breadcrumb breadcrumb">
+            <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
+            <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+        </ul>
+    </div>
+    <div class="row">
+        <div class="col-md-6 col-lg-3">
+            <div class="widget-small primary coloured-icon"><i class="icon fa fa-users fa-3x"></i>
+                <div class="info">
+                    <h4>Popular Category</h4>
+                    <p><b>5</b></p>
                 </div>
-                <p class="card-category">Used Space</p>
-                <h3 class="card-title">49/50
-                <small>GB</small>
-                </h3>
-            </div>
-            <div class="card-footer">
-                <div class="stats">
-                <i class="material-icons text-danger">warning</i>
-                <a href="javascript:;">Get More Space...</a>
-                </div>
-            </div>
             </div>
         </div>
-        <div class="col-lg-3 col-md-6 col-sm-6">
-            <div class="card card-stats">
-            <div class="card-header card-header-success card-header-icon">
-                <div class="card-icon">
-                <i class="material-icons">store</i>
+        <div class="col-md-6 col-lg-3">
+            <div class="widget-small info coloured-icon"><i class="icon fa fa-thumbs-o-up fa-3x"></i>
+                <div class="info">
+                    <h4>Todays Views</h4>
+                    <p><b>25</b></p>
                 </div>
-                <p class="card-category">Revenue</p>
-                <h3 class="card-title">$34,245</h3>
-            </div>
-            <div class="card-footer">
-                <div class="stats">
-                <i class="material-icons">date_range</i> Last 24 Hours
-                </div>
-            </div>
             </div>
         </div>
-        <div class="col-lg-3 col-md-6 col-sm-6">
-            <div class="card card-stats">
-            <div class="card-header card-header-danger card-header-icon">
-                <div class="card-icon">
-                <i class="material-icons">info_outline</i>
+        <div class="col-md-6 col-lg-3">
+            <div class="widget-small warning coloured-icon"><i class="icon fa fa-files-o fa-3x"></i>
+                <div class="info">
+                    <h4>Uploades</h4>
+                    <p><b>10</b></p>
                 </div>
-                <p class="card-category">Fixed Issues</p>
-                <h3 class="card-title">75</h3>
-            </div>
-            <div class="card-footer">
-                <div class="stats">
-                <i class="material-icons">local_offer</i> Tracked from Github
-                </div>
-            </div>
             </div>
         </div>
-        <div class="col-lg-3 col-md-6 col-sm-6">
-            <div class="card card-stats">
-            <div class="card-header card-header-info card-header-icon">
-                <div class="card-icon">
-                <i class="fa fa-twitter"></i>
-                </div>
-                <p class="card-category">Followers</p>
-                <h3 class="card-title">+245</h3>
-            </div>
-            <div class="card-footer">
-                <div class="stats">
-                <i class="material-icons">update</i> Just Updated
+        <div class="col-md-6 col-lg-3">
+            <div class="widget-small danger coloured-icon"><i class="icon fa fa-star fa-3x"></i>
+                <div class="info">
+                    <h4>Stars</h4>
+                    <p><b>500</b></p>
                 </div>
             </div>
         </div>
     </div>
-</div>
 @endsection

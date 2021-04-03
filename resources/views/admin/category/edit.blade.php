@@ -1,6 +1,6 @@
 @extends('admin.master')
 @section('content')
-<div class="col-md-8 offset-md-2">
+<div class="col-md-12">
     <div class="card">
         <div class="card-header card-header-primary">
             <a href="{{route('category.list')}}" class="btn btn-info pull-right">All Category</a>

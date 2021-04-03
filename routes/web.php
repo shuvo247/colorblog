@@ -14,18 +14,20 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('frontend.master');
 });
 
 Auth::routes();
-
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // Backend Route Start
-
 // Category Routes Start
     // Start Category Routes
-    Route::group(['prefix'=>'category', 'as'=>'category.'], function(){
+    Route::GROUP(['prefix'=>'category', 'as'=>'category.'], function(){
+        Route::GET('add',[
+            'uses'  => 'Backend\CategoryController@create',
+            'as'    => 'add'
+        ]);
         Route::GET('list', [
             'uses'  =>'Backend\CategoryController@index',
             'as'    =>'list'
@@ -36,20 +38,85 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
         ]);
         Route::GET('show',[
             'uses'  => 'Backend\CategoryController@show',
-            'as'     => 'show'
+            'as'    => 'show'
         ]);
         Route::POST('update',[
-            'uses'   => 'Backend\CategoryController@update',
-            'as'     => 'update'
+            'uses'  => 'Backend\CategoryController@update',
+            'as'    => 'update'
         ]);
         Route::GET('destroy',[
-            'uses'   => 'Backend\CategoryController@destroy',
-            'as'     => 'destroy'
+            'uses'  => 'Backend\CategoryController@destroy',
+            'as'    => 'destroy'
         ]);
     });
     // End Category Routes
     // Start Slider Routes
-    Route::GET('')
+    Route::GROUP(['prefix'=>'slider', 'as'=>'slider.'], function(){
+        Route::GET('list',[
+            'uses'     => 'Backend\SliderController@index',
+            'as'       => 'list'
+        ]);
+        Route::GET('add',[
+            'uses'    => 'Backend\SliderController@create',
+            'as'      => 'add'
+        ]);
+        Route::POST('store',[
+            'uses'    => 'Backend\SliderController@store',
+            'as'      => 'store'
+        ]);
+        Route::GET('edit',[
+            'uses'    => 'Backend\SliderController@edit',
+            'as'      => 'edit'
+        ]);
+        Route::GET('destroy',[
+            'uses'    => 'Backend\SliderController@destroy',
+            'as'      => 'destroy'
+        ]);
+        Route::POST('update',[
+            'uses'    => 'Backend\SliderController@update',
+            'as'      => 'update'
+        ]);
+    });
     // End Slider Routes
-// Category Routes End
+    // Start Post Route
+    Route::GROUP(['prefix' => 'post','as' => 'post.'],function(){
+        Route::GET('list',[
+            'uses'    => 'Backend\PostController@index',
+            'as'      => 'list'
+        ]);
+        Route::GET('add',[
+            'uses'    => 'Backend\PostController@create',
+            'as'      => 'add'
+        ]);
+        Route::POST('store',[
+            'uses'  => 'Backend\PostController@store',
+            'as'    => 'store'
+        ]);
+        Route::GET('edit',[
+            'uses'  => 'Backend\PostController@edit',
+            'as'    => 'edit'
+        ]);
+        Route::POST('update',[
+            'uses'  => 'Backend\PostController@update',
+            'as'    => 'update'
+        ]);
+        Route::GET('destroy',[
+            'uses'  => 'Backend\PostController@destroy',
+            'as'    => 'destroy'
+        ]);
+    });
+    // Start Settings Routes
+    Route::Group(['prefix' => 'setting' , 'as' => 'setting.'],function(){
+        Route::GET('list',[
+            'uses' => 'Backend\SettingController@index',
+            'as'   => 'list'
+        ]);
+        Route::POST('update',[
+            'uses'  => 'Backend\SettingController@update',
+            'as'    => 'update'
+        ]);
+    });
+    // End Settings Routes
+// Backend Routes End
+
 

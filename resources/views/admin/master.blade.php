@@ -1,18 +1,18 @@
-
-@include('admin.partials.head')
-<body class="">
-  <div class="wrapper ">
-    @include('admin.partials.aside_bar')
-    <div class="main-panel">
-      <div class="content">
-        <div class="container-fluid">
-            @yield('content')
-        </div>
-      </div>
-    @include('admin.partials.footer')
-    </div>
-  </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
     @include('admin.partials.scripts')
-</body>
+    @include('admin.partials.head')
+</head>
+<body class="app sidebar-mini">
+<!-- Navbar-->
+@include('admin.partials.header')
+<!-- Sidebar menu-->
+<div class="app-sidebar__overlay" data-toggle="sidebar"></div>
+    @include('admin.partials.aside_bar')
+<main class="app-content">
+    @yield('content')
+</main>
 
+</body>
 </html>
