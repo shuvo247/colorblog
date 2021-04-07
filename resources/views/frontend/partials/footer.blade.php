@@ -1,97 +1,110 @@
-
-<!-- Footer Start -->
-<div class="footer">
+<footer class="footer">
     <div class="container">
         <div class="row">
-            <div class="col-lg-3 col-md-6">
-                <div class="footer-widget">
-                    <h3 class="title">Get in Touch</h3>
-                    <div class="contact-info">
-                        <p><i class="fa fa-map-marker"></i>123 News Street, NY, USA</p>
-                        <p><i class="fa fa-envelope"></i>info@example.com</p>
-                        <p><i class="fa fa-phone"></i>+123-456-7890</p>
-                        <div class="social">
-                            <a href=""><i class="fab fa-twitter"></i></a>
-                            <a href=""><i class="fab fa-facebook-f"></i></a>
-                            <a href=""><i class="fab fa-linkedin-in"></i></a>
-                            <a href=""><i class="fab fa-instagram"></i></a>
-                            <a href=""><i class="fab fa-youtube"></i></a>
+            <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+                <div class="widget">
+                    <h2 class="widget-title">Recent Posts</h2>
+                    <div class="blog-list-widget">
+                        <div class="list-group">
+                            @include('frontend.inc.recent-post')
                         </div>
-                    </div>
-                </div>
-            </div>
+                    </div><!-- end blog-list -->
+                </div><!-- end widget -->
+            </div><!-- end col -->
 
-            <div class="col-lg-3 col-md-6">
-                <div class="footer-widget">
-                    <h3 class="title">Useful Links</h3>
-                    <ul>
-                        <li><a href="#">Lorem ipsum</a></li>
-                        <li><a href="#">Pellentesque</a></li>
-                        <li><a href="#">Aenean vulputate</a></li>
-                        <li><a href="#">Vestibulum sit amet</a></li>
-                        <li><a href="#">Nam dignissim</a></li>
-                    </ul>
-                </div>
-            </div>
+            <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+                <div class="widget">
+                    <h2 class="widget-title">Popular Posts</h2>
+                    <div class="blog-list-widget">
+                        <div class="list-group">
+                            <a href="single.html" class="list-group-item list-group-item-action flex-column align-items-start">
+                                <div class="w-100 justify-content-between">
+                                    <img src="{{asset('frontend')}}/upload/blog_square_04.jpg" alt="" class="img-fluid float-left">
+                                    <h5 class="mb-1">Banana-chip chocolate cake recipe with customs</h5>
+                                    <span class="rating">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                            </span>
+                                </div>
+                            </a>
 
-            <div class="col-lg-3 col-md-6">
-                <div class="footer-widget">
-                    <h3 class="title">Quick Links</h3>
-                    <ul>
-                        <li><a href="#">Lorem ipsum</a></li>
-                        <li><a href="#">Pellentesque</a></li>
-                        <li><a href="#">Aenean vulputate</a></li>
-                        <li><a href="#">Vestibulum sit amet</a></li>
-                        <li><a href="#">Nam dignissim</a></li>
-                    </ul>
-                </div>
-            </div>
+                            <a href="single.html" class="list-group-item list-group-item-action flex-column align-items-start">
+                                <div class="w-100 justify-content-between">
+                                    <img src="{{asset('frontend')}}/upload/blog_square_07.jpg" alt="" class="img-fluid float-left">
+                                    <h5 class="mb-1">10 practical ways to choose organic vegetables</h5>
+                                    <span class="rating">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                            </span>
+                                </div>
+                            </a>
 
-            <div class="col-lg-3 col-md-6">
-                <div class="footer-widget">
-                    <h3 class="title">Newsletter</h3>
-                    <div class="newsletter">
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed porta dui. Class aptent taciti sociosqu
-                        </p>
-                        <form>
-                            <input class="form-control" type="email" placeholder="Your email here">
-                            <button class="btn">Submit</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Footer End -->
+                            <a href="single.html" class="list-group-item list-group-item-action flex-column align-items-start">
+                                <div class="w-100 last-item justify-content-between">
+                                    <img src="{{asset('frontend')}}/upload/blog_square_06.jpg" alt="" class="img-fluid float-left">
+                                    <h5 class="mb-1">We are making homemade ravioli, nice and good</h5>
+                                    <span class="rating">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                            </span>
+                                </div>
+                            </a>
+                        </div>
+                    </div><!-- end blog-list -->
+                </div><!-- end widget -->
+            </div><!-- end col -->
 
-<!-- Footer Menu Start -->
-<div class="footer-menu">
-    <div class="container">
-        <div class="f-menu">
-            <a href="">Terms of use</a>
-            <a href="">Privacy policy</a>
-            <a href="">Cookies</a>
-            <a href="">Accessibility help</a>
-            <a href="">Advertise with us</a>
-            <a href="">Contact us</a>
-        </div>
-    </div>
-</div>
-<!-- Footer Menu End -->
-<!-- Footer Bottom Start -->
-<div class="footer-bottom">
-    <div class="container">
+            <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+                <div class="widget">
+                    <h2 class="widget-title">Popular Categories</h2>
+                    <div class="link-widget">
+                        <ul>
+                            <li><a href="#">Fahsion <span>(21)</span></a></li>
+                            <li><a href="#">Lifestyle <span>(15)</span></a></li>
+                            <li><a href="#">Art & Design <span>(31)</span></a></li>
+                            <li><a href="#">Health Beauty <span>(22)</span></a></li>
+                            <li><a href="#">Clothing <span>(66)</span></a></li>
+                            <li><a href="#">Entertaintment <span>(11)</span></a></li>
+                            <li><a href="#">Food & Drink <span>(87)</span></a></li>
+                        </ul>
+                    </div><!-- end link-widget -->
+                </div><!-- end widget -->
+            </div><!-- end col -->
+        </div><!-- end row -->
+
+        <hr class="invis1">
+
         <div class="row">
-            <div class="col-md-6 copyright">
-                <p>Copyright &copy; <a href="https://htmlcodex.com">HTML Codex</a>. All Rights Reserved</p>
-            </div>
-
-            <div class="col-md-6 template-by">
-                <p>Template By <a href="https://htmlcodex.com">HTML Codex</a></p>
+            <div class="col-lg-8 offset-lg-2">
+                <div class="widget">
+                    <div class="footer-text text-center">
+                        <a href="index.html"><img src="{{asset('uploads/logo/'.$site_settings->website_logo)}}" alt="" class="img-fluid"></a>
+                        <p style="text-align: justify">We Color Ceramics Ltd. Pleased to introduce ourselves as an offline and online sales and reseller of All Type of ceramics product, ceramics related products and building materials product in Bangladesh. This is first time in history we are going to start our business operation in online platform. Our goal is to make first step advance digital multi-vendor "ceramics" e-commerce web site. Determined to build a digital Bangladesh and It feels so good to be a collaborator.</p>
+                        <div class="social">
+                            <a href="{{$site_settings->facebook_link}}" data-toggle="tooltip" data-placement="bottom" title="Facebook"><i class="fa fa-facebook"></i></a>
+                            <a href="{{$site_settings->youtube_link}}" data-toggle="tooltip" data-placement="bottom" title="Facebook"><i class="fa fa-youtube"></i></a>
+                            <a href="{{$site_settings->twitter_link}}" data-toggle="tooltip" data-placement="bottom" title="Twitter"><i class="fa fa-twitter"></i></a>
+                            <a href="{{$site_settings->linked_link}}" data-toggle="tooltip" data-placement="bottom" title="Instagram"><i class="fa fa-instagram"></i></a>
+                        </div>
+                        <hr class="invis">
+                    </div><!-- end footer-text -->
+                </div><!-- end widget -->
+            </div><!-- end col -->
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <br>
+                <div class="copyright">&copy; {{$site_settings->copywrite_text}}.</div>
             </div>
         </div>
-    </div>
-</div>
-<!-- Footer Bottom End -->
+    </div><!-- end container -->
+</footer><!-- end footer -->

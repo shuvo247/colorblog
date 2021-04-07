@@ -1,9 +1,15 @@
+<!-- Bootstrap core CSS -->
+<link href="{{asset('frontend')}}/css/bootstrap.css" rel="stylesheet">
 
-<!-- CSS Libraries -->
-<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-<link href="{{asset('frontend/lib/slick/slick.css')}}" rel="stylesheet">
-<link href="{{asset('frontend/lib/slick/slick-theme.css')}}" rel="stylesheet">
+<!-- FontAwesome Icons core CSS -->
+<link href="{{asset('frontend')}}/css/font-awesome.min.css" rel="stylesheet">
 
-<!-- Template Stylesheet -->
-<link href="{{asset('frontend/css/style.css')}}" rel="stylesheet">
+<!-- Custom styles for this template -->
+<link href="{{asset('frontend')}}/css/style.css" rel="stylesheet">
+
+<!-- Responsive styles for this template -->
+<link href="{{asset('frontend')}}/css/responsive.css" rel="stylesheet">
+
+<!-- Colors for this template -->
+<link href="{{asset('frontend')}}/css/colors.css" rel="stylesheet">
+<link rel="stylesheet" href="{{asset('frontend')}}/css/custom.css">

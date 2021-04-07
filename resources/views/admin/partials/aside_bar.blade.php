@@ -30,5 +30,10 @@
                 <span class="app-menu__label">Settings</span>
             </a>
         </li>
+        <li><a class="app-menu__item" href="{{route('setting.category')}}">
+                <i class="app-menu__icon fa fa-pie-chart"></i>
+                <span class="app-menu__label">Category Setting</span>
+            </a>
+        </li>
     </ul>
 </aside>

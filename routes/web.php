@@ -14,11 +14,35 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('frontend.master');
+    return view('frontend.index');
 });
 
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Frontend Routes Start
+    // Show Category Product Page
+    Route::GET('category/post',[
+        'uses'   => 'PagesController@showCategoryPostPage',
+        'as'     => 'category.post'
+    ]);
+    // Show Single Post
+    Route::GET('single/post',[
+        'uses'   => 'PagesController@showSinglePost',
+        'as'     => 'single.post'
+    ]);
+    // Frontend Search Routes
+    Route::POST('search/post',[
+        'uses'  => 'PagesController@searchPost',
+        'as'    =>   'search'
+    ]);
+    // Sitemap Routes Start
+    Route::get('/sitemap.xml', 'SitemapController@index');
+    Route::get('/sitemap.xml/post', 'SitemapController@post');
+    Route::get('/sitemap.xml/categories', 'SitemapController@categories');
+    // Sitemap Routes End
+// Frontend Routes End
+
+
 
 // Backend Route Start
 // Category Routes Start
@@ -114,6 +138,22 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
         Route::POST('update',[
             'uses'  => 'Backend\SettingController@update',
             'as'    => 'update'
+        ]);
+        Route::GET('category',[
+            'uses'  => 'Backend\SettingController@category',
+            'as'    => 'category'
+        ]);
+        Route::POST('category/store',[
+            'uses'  => 'Backend\SettingController@categoryStore',
+            'as'    => 'category.store'
+        ]);
+        Route::POST('category/update',[
+            'uses'  => 'Backend\SettingController@categoryUpdate',
+            'as'    => 'category.update'
+        ]);
+        Route::GET('category/destroy',[
+            'uses' => 'Backend\SettingController@categoryDestroy',
+            'as'   => 'category.destroy'
         ]);
     });
     // End Settings Routes

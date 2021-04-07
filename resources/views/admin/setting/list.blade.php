@@ -1,12 +1,13 @@
 @extends('admin.master')
 @section('content')
     <div class="col-md-12">
+        @include('admin.partials.flash')
         <div class="card">
             <div class="card-header card-header-primary">
                 <h4 class="card-category">Settings</h4>
             </div>
             <div class="card-body">
-                <form action="{{route('setting.update')}}" method="POST">
+                <form action="{{route('setting.update')}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="row">
                         <div class="col-md-12">
@@ -16,6 +17,7 @@
                             </div>
                         </div>
                         <div class="col-md-12">
+                            <img src="{{asset('uploads/logo/'.$allSetting->website_logo)}}" width="50" alt="">
                             <div class="form-group">
                                 <label class="bmd-label-floating">Website Logo</label>
                                 <input type="file" class="form-control" name="website_logo">
@@ -59,7 +61,7 @@
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label class="bmd-label-floating">Linkedin Link</label>
+                                <label class="bmd-label-floating">Instagram Link</label>
                                 <input type="text" class="form-control" name="linked_link" value="{{$allSetting->linked_link}}">
                             </div>
                         </div>
